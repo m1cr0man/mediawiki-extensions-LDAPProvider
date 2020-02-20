@@ -26,7 +26,7 @@ class UserGidNumber extends UserGroupsRequest {
 
 		$groups = $this->ldapClient->search(
 			"(&(objectclass=posixGroup)(gidnumber=$gid))",
-			$this->$groupBaseDN, [ $dn ]
+			$groupBaseDN, [ $dn ]
 		);
 		$ret = [];
 		foreach ( $groups as $key => $value ) {
